@@ -11,7 +11,7 @@ using NyMathExam.Model;
 namespace NyMathExam.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class NyGradeController : ControllerBase
     {
         private IGradeRepository _gradeRepository { get; }

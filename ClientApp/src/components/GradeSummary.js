@@ -49,7 +49,7 @@ export class GradeSummary extends Component {
   }
 
   async populateSummaryData() {
-    const response = await fetch('NyGrade/Summary');
+    const response = await fetch('api/NyGrade/Summary');
     const data = await response.json();
     this.setState({ summaryGrades: data, loading: false });
   }

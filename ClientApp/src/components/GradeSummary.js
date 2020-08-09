@@ -19,7 +19,7 @@ export class GradeSummary extends Component {
           <tr>
             <th>Category</th>
             <th>Year</th>            
-            <th>Number Tested Average</th>           
+            <th>Average Number Level 2</th>           
           </tr>
         </thead>
         <tbody>
@@ -27,7 +27,7 @@ export class GradeSummary extends Component {
             <tr key={new Date()}>
               <td>{gradescore.category}</td>
               <td>{gradescore.year}</td>              
-              <td>{gradescore.numberTestedAvg.toFixed(3)}</td>              
+              <td>{gradescore.numberLevel2Avg.toFixed(3)}</td>              
             </tr>
           )}
         </tbody>

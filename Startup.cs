@@ -25,6 +25,7 @@ namespace NyMathExam
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //dependency injection
             services.AddHttpClient();
             var csvConfig = new CsvConfiguration(CultureInfo.CurrentCulture);
             var constProvider = new ConstProvider(Configuration.GetValue<string>("GradeScoreUrl"));

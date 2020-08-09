@@ -33,10 +33,10 @@ namespace NyMathExam.Controllers
                       {
                           Category = scoreGroup.Key.Category,
                           Year = scoreGroup.Key.Year,
-                          NumberTestedAvg = scoreGroup.Average(s => s.NumberTested)
+                          NumberLevel2Avg = scoreGroup.Average(s => s.NumberLevel2)
                       };
             var avgqry = from avgNum in groupqry
-                         orderby avgNum.NumberTestedAvg descending
+                         orderby avgNum.NumberLevel2Avg descending
                          select avgNum;
             return avgqry.ToList();
         }

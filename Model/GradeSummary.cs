@@ -11,6 +11,6 @@ namespace NyMathExam.Model
 
         public string Category { get; set; }
 
-        public double NumberTestedAvg { get; set; }
+        public double NumberLevel2Avg { get; set; }
     }
 }

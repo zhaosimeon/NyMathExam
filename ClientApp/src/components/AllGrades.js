@@ -73,7 +73,7 @@ export class AllGrades extends Component {
   }
 
   async populateGradeScoreData() {
-    const response = await fetch('NyGrade');
+    const response = await fetch('api/NyGrade');
     const data = await response.json();
     this.setState({ gradeScores: data, loading: false });
   }

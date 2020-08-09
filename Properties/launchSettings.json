@@ -2,13 +2,9 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
-    "iis": {
-      "applicationUrl": "http://localhost/NyMathExam",
-      "sslPort": 0
-    },
     "iisExpress": {
-      "applicationUrl": "http://localhost:57557",
-      "sslPort": 9000
+      "applicationUrl": "http://localhost:58513",
+      "sslPort": 44348
     }
   },
   "profiles": {
@@ -22,10 +18,10 @@
     "NyMathExam": {
       "commandName": "Project",
       "launchBrowser": true,
+      "applicationUrl": "https://localhost:8001;http://localhost:8000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "https://localhost:8081;http://localhost:8080"
+      }
     }
   }
 }

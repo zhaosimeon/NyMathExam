@@ -4,8 +4,14 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
 WORKDIR /app
 EXPOSE 8000
 EXPOSE 8001
+RUN curl -sL https://deb.nodesource.com/setup_10.x |  bash -
+RUN apt-get install -y nodejs
+
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+RUN curl -sL https://deb.nodesource.com/setup_10.x |  bash -
+RUN apt-get install -y nodejs
+
 WORKDIR /src
 COPY ["NyMathExam.csproj", ""]
 RUN dotnet restore "./NyMathExam.csproj"

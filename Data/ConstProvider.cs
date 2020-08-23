@@ -8,13 +8,7 @@ using System.Threading.Tasks;
 namespace NyMathExam.Data
 {
     public class ConstProvider
-    {        
-
-        public ConstProvider(string gradeScoreUrl)
-        {
-            GradeScoreUrl = gradeScoreUrl;
-        }
-
-        public string GradeScoreUrl { get; }
+    {
+        public string GradeScoreUrl { get; set; }
     }
 }

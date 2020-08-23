@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Table } from 'reactstrap';
 
 export class AllGrades extends Component {
   static displayName = AllGrades.name;
@@ -14,7 +15,7 @@ export class AllGrades extends Component {
 
    renderGradesTable = gradeScores => {
     return (
-      <table className='table table-striped' aria-labelledby="tabelLabel">
+      <Table striped dark>
         <thead>
           <tr>
             <th>Grade</th>
@@ -36,7 +37,7 @@ export class AllGrades extends Component {
         </thead>
         <tbody>
           {gradeScores.map(gradescore =>
-            <tr key={new Date()}>
+            <tr key={new Date()} scope="row">
               <td>{gradescore.grade}</td>
               <td>{gradescore.year}</td>
               <td>{gradescore.category}</td>
@@ -55,7 +56,7 @@ export class AllGrades extends Component {
             </tr>
           )}
         </tbody>
-      </table>
+      </Table>
     );
   }
 

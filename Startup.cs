@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using NyMathExam.Data;
 using System.Globalization;
 using System.Linq;
@@ -27,11 +28,9 @@ namespace NyMathExam
             services.AddControllersWithViews();
             //dependency injection
             services.AddHttpClient();
-            var csvConfig = new CsvConfiguration(CultureInfo.CurrentCulture);
-            var constProvider = new ConstProvider(Configuration.GetValue<string>("GradeScoreUrl"));
-            services.AddSingleton<ConstProvider>(constProvider);
-            services.AddSingleton<CsvConfiguration>(csvConfig);
-            services.AddSingleton<GradeScoreSet>();
+            services.Configure<ConstProvider>(Configuration.GetSection(nameof(ConstProvider)));
+            services.AddSingleton<ConstProvider>(sp => sp.GetRequiredService<IOptions<ConstProvider>>().Value);
+            services.AddSingleton<CsvConfiguration>(new CsvConfiguration(CultureInfo.CurrentCulture));
             services.AddSingleton(typeof(IGradeRepository), typeof(GradeScoreSet));
 
             // In production, the React files will be served from this directory

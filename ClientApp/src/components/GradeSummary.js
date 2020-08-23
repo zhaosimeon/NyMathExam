@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Table } from 'reactstrap';
 
 export class GradeSummary extends Component {
   static displayName = GradeSummary.name;
@@ -14,7 +15,7 @@ export class GradeSummary extends Component {
 
    renderGradesTable = summaryGrades => {
     return (
-      <table className='table table-striped' aria-labelledby="tabelLabel">
+      <Table striped>
         <thead>
           <tr>
             <th>Category</th>
@@ -31,7 +32,7 @@ export class GradeSummary extends Component {
             </tr>
           )}
         </tbody>
-      </table>
+      </Table>
     );
   }
 
